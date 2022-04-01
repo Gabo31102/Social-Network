@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 export const InfoUserItem = ( {ItemIdUser} ) => {
 
-  console.log(ItemIdUser)
 
   const [userProfile, setUserProfile] = useState('60d0fe4f5311236168a109e7')
   const [userAdress, setuserAdress] = useState('')

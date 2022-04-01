@@ -20,7 +20,7 @@ export const CommentsItem = ( {ItemIdPost}) => {
         const {data} = await resp.json();
         const [comments] = data.map( comment => {
            
-        console.log(comment)  
+   
              return {
             message: comment.message,
             firstname: comment.owner.firstName,

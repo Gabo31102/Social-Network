@@ -1,6 +1,6 @@
 # Primeros paso con la aplicación Social Network
 
-El proyecto [Social Network App](https://github.com/facebook/create-react-app) es una aplicación realizada .\
+El proyecto [Social Network App](https://gabo31102.github.io/auth/login) es una aplicación realizada .\
 con framework de javaScript (react) utilizando patron de arquitectura redux y uso de hooks .\
 
 
