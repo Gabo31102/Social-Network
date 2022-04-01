@@ -1,0 +1,29 @@
+* {
+    font-family: cursive;
+   }
+
+.topnav{
+ 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color:#5C5696;
+        color: #fff;
+     
+}
+
+.display-name{
+     font-size: 20px;
+     text-transform: capitalize;
+     
+}
+
+.logout {
+    background-color:#5C5696;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 10px;
+  }
+  
