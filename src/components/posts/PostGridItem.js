@@ -93,7 +93,7 @@ export const PostGridItem = ({post}) => {
               <InfoUserItem ItemIdUser={ItemIdUser} />
           </ModalUserInfo>
     
-          <ModalComments referencia={modal}>
+          <ModalComments ref={modal2}>
               <CommentsItem ItemIdPost={ItemIdPost} />
           </ModalComments>
              

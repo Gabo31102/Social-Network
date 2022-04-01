@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { CommentGridItem } from './CommentGridItem'
 
 export const CommentsItem = ( {ItemIdPost}) => {
+ 
 
-    console.log(ItemIdPost)
+    const [useComments, setUseComments] = useState([])
+
+    useEffect( ()=>{
+        getComments();
+    },[])
    
     const getComments = async  () => {
 
@@ -14,22 +20,33 @@ export const CommentsItem = ( {ItemIdPost}) => {
           }
         });
         const {data} = await resp.json();
-        const comments = data.map( coment => {
-            console.log(data)
-          return {
+        const  comments = data.map( comment => { 
+             return {
+            id: comment.id,
+            message: comment.message,
+            firstname: comment.owner.firstName,
+            lastname: comment.owner.lastName,
+            picture: comment.owner.picture,
+            title: comment.owner.title
        
           }
-       
         })
-        
+        setUseComments(comments)
       }
 
-    getComments();
-
   return (
-    <>
-       
+     <div className="grid-card-container">
+         {
+            useComments.map( (comment)=> (
+                <CommentGridItem 
+                    key={comment.id}
+                    comment={comment}
+                />
+            ))
+         }
     
-    </>
+    </div>
+    
+ 
   )
 }

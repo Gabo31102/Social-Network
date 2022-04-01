@@ -10,7 +10,7 @@ import { createPortal } from "react-dom";
 
 
   
-  const modalElement = document.getElementById("modal-root");
+  const modalElement = document.getElementById("modal-root2");
   
   export function Modal({ children, fade = false, defaultOpened = false }, ref) {
     const [isOpen, setIsOpen] = useState(defaultOpened);

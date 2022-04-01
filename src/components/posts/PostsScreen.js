@@ -6,16 +6,31 @@ export const PostsScreen = () => {
 
   const [posts, setposts] = useState([]);
 
+  const [inputValue, setInputValue]= useState('ocean')
 
+  const handleInputChange = ( e ) => {
+    setInputValue( e.target.value );
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if ( inputValue.trim().length > 1 ) {
+        setInputValue('');
+    }
+
+}
 
   useEffect(() =>{
+  
     getPosts();
 
-  }, [])
+  }, [inputValue])
+
+    
 
   const getPosts = async  () => {
 
-    const url = 'https://dummyapi.io/data/v1/tag/ocean/post?limit=12'
+    const url = `https://dummyapi.io/data/v1/tag/${inputValue}/post?limit=12`
     const resp = await fetch( url, {
       headers:{
         'Content-Type': 'aplication/json',
@@ -49,8 +64,25 @@ export const PostsScreen = () => {
     <>
 
      <Navbar/>
+     <form onSubmit={ handleSubmit }>
+
+          <div className='box'>
+            <div className="container-1">
+            <span className="icon"><i className="fa fa-search"></i></span>
+            <input 
+                type="searh"
+                id="search"
+                placeholder="Search by tag ..."
+                autoComplete="off"
+                value={ inputValue }
+                onChange={ handleInputChange }
+            />
+            </div>
+          </div>
+        </form>
+
      <div className="grid-container">
-       
+ 
         {
           posts.map( (post) => (
             
